@@ -1,0 +1,215 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #fdeff9, #f9f1ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  color: #46244c;
+  text-align: center;
+}
+
+.wrapper {
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  padding: 20px;
+  position: relative;
+}
+
+/* Nota instructiva */
+.note {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #a83756;
+  font-style: italic;
+  font-family: 'Parisienne', cursive;
+  user-select: none;
+}
+
+/* Botón sobre con forma de corazón */
+#openEnvelopeBtn {
+  background: #d94f70;
+  border: none;
+  border-radius: 50%;
+  width: 15vw;
+  max-width: 90px;
+  height: 15vw;
+  max-height: 90px;
+  cursor: pointer;
+  color: white;
+  font-size: 6vw;
+  max-font-size: 3rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 15px rgba(217, 79, 112, 0.4);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#openEnvelopeBtn:hover,
+#openEnvelopeBtn:focus {
+  box-shadow: 0 12px 20px rgba(217, 79, 112, 0.7);
+  transform: scale(1.1);
+  outline: none;
+}
+
+#openEnvelopeBtn:active {
+  transform: scale(0.95);
+}
+
+/* Contenedor de la carta amor, inicialmente oculta */
+#loveLetter {
+  background: #fff0f6;
+  border: 2px solid #d94f70;
+  padding: 5vw 6vw;
+  border-radius: 25px;
+  box-shadow: 0 6px 15px rgba(217, 79, 112, 0.2);
+  margin-top: 5vw;
+
+  max-height: 0;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  transform-origin: top center;  
+
+  transition:
+    opacity 0.5s ease,
+    max-height 0.7s ease,
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+  font-size: 1.2rem;
+}
+
+/* Cuando es visible */
+#loveLetter.visible {
+  max-height: 800px; /* suficiente para mostrar contenido */
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  box-shadow: 0 20px 40px rgba(217, 79, 112, 0.4);
+}
+
+/* Título con tipografía romántica */
+#loveLetter h1 {
+  font-family: 'Parisienne', cursive;
+  font-size: 8vw;
+  max-font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #d94f70;
+  text-shadow: 2px 2px 8px rgba(217, 79, 112, 0.3);
+}
+
+/* Párrafos del mensaje */
+#loveLetter p {
+  font-size: 4vw;
+  max-font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Mensaje secreto */
+.secret-message {
+  font-size: 4.5vw;
+  max-font-size: 1.3rem;
+  font-weight: 600;
+  color: #a83756;
+  margin-top: 30px;
+  font-style: italic;
+}
+
+/* Icono corazón dentro del botón (opcional) */
+.heart-icon {
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Nuevo botón para mensaje secreto */
+.secret-btn {
+  background-color: #d94f70;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(217, 79, 112, 0.4);
+}
+
+.secret-btn:hover,
+.secret-btn:focus {
+  background-color: #a83756;
+  outline: none;
+}
+
+/* Oculto inicialmente */
+.hidden {
+  display: none;
+}
+
+/* Estilo para el corazón que cae */
+#heartContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none; /* Para que no interfiera con clics */
+}
+
+.heart {
+  font-size: 5rem; /* Tamaño del corazón */
+  animation: fall 2s infinite; /* Animación de caída */
+  color: red;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  animation: blink 1s infinite; /* Parpadeo */
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive adjustments for very small devices */
+@media (max-width: 350px) {
+  #openEnvelopeBtn {
+    width: 70px;
+    height: 70px;
+    font-size: 2.2rem;
+  }
+  #loveLetter h1 {
+    font-size: 2.3rem;
+  }
+  #loveLetter p, .secret-message {
+    font-size: 1rem;
+  }
+}

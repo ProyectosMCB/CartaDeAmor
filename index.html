@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carta de Amor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrapper">
+
+    <p class="note">Haz clic en el Corazón para Abrir la Carta 💌</p>
+
+    <button id="openEnvelopeBtn" aria-label="Abrir carta de amor" title="Abrir carta de amor">
+      <span class="heart-icon" aria-hidden="true">&#128140;</span>
+    </button>
+
+    <div id="loveLetter" class="hidden">
+      <h1>Para Mi Amada Abigail ❤️</h1>
+
+<p>
+  Abigail, cada momento lejos de ti es como un día sin sol, y cada instante contigo es la calma perfecta que llena mi vida de luz y sentido. 
+  Eres la chispa que enciende mi alegría y la melodía que acompaña mi corazón en cada paso que doy.
+</p>
+
+<p>
+  A tu lado aprendí que el amor es la aventura más hermosa, y contigo quiero construir un mundo lleno de felicidad, sueños y recuerdos que vivan para siempre en nuestros corazones.
+</p>
+
+<button id="showSecretMsgBtn" aria-label="Ver mensaje secreto" class="secret-btn">
+  Mensaje secreto 💗
+</button>
+
+<p class="secret-message hidden" id="secretMessage">
+  Últimamente he estado sintiéndome triste… siento que poco a poco nos estamos alejando de nuevo, y eso me duele más de lo que puedo explicar.  
+  No quiero que lo nuestro se apague, no quiero que este amor se convierta en solo un recuerdo. Quiero que luchemos, que volvamos a mirarnos con el mismo amor de antes, con esa fuerza que una vez nos unió. 💔<br /><br />
+  Por favor, no dejemos que esto termine… te amo con todo mi corazón, y aún guardo la esperanza de que podamos sanar lo nuestro juntos. ❤️<br />
+  <strong>Tal vez nuestro próximo encuentro no sea fácil, pero aun así… te esperaré fuera del cine. Solo quisiera abrazarte, darte un poco del cariño que guardo para ti. ❤️</strong>
+</p>
+
+    </div>
+
+    <!-- Contenedor para el corazón -->
+    <div id="heartContainer" class="hidden"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
